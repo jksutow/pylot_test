@@ -1,0 +1,10 @@
+<!-- contains layout.html file -->
+{% extends "layout.html" %}
+{% block body %}
+<a href="/profile">Home</a> | <a href="/logout">Logout</a>
+
+<h1>{{non_friend['alias']}}'s Profile</h1>
+<p>Name: {{non_friend['name']}}</p>
+<p>Email Address: {{non_friend['email']}}</p>
+
+{% endblock %}

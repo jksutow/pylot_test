@@ -1,0 +1,53 @@
+<!-- contains layout.html file -->
+{% extends "layout.html" %}
+{% block body %}
+<a href="/profile">Home</a> | <a href="/logout">Logout</a>
+<h1>Hello, {{session['name']}}!</h1>
+<p>Here is the list of your friends: </p>
+<div class="container">
+    <table class = "table table-striped">
+      <thead>
+        <tr>
+          <th>Alias</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {% if length == 0: %}
+            <h4>You don't have any friends yet!</h4>
+          {% else: %}
+          {% for friend in friends %}
+          <td>{{friend['friend_name']}}</td>
+          <td><a href="/view_profile/{{friend['friend_id']}}">View Profile</a> <a href="/delete/{{friend['friend_id']}}">Remove as Friend</a></td>
+        </tr>
+          {% endfor %}
+          {% endif %}
+      </tbody>
+    </table>
+
+</div>
+
+<p>Other users not on your friend's list:</p>
+<div class="container">
+    <table class = "table table-striped">
+      <thead>
+        <tr>
+          <th>Alias</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for non_friend in non_friends %}
+        <tr>
+          <td><a href="/view_non_friend/{{non_friend['id']}}">{{non_friend['alias']}}</a></td>
+          <td><a href="/add_friend/{{non_friend['id']}}">Add as friend</a></td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

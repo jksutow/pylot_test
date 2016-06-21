@@ -1,0 +1,34 @@
+
+<!-- contains layout.html file -->
+{% extends "layout.html" %}
+{% block body %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p>{{message}}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<h1>Welcome!</h1>
+
+<!-- login form -->
+<form action="/login" method="post">
+  Email: <input type="email" name="email">
+  Password: <input type="password" name="password">
+  <input type="submit" value="Login">
+</form>
+
+<!-- registration form -->
+<form action="/register" method="post">
+  Name: <input type="text" name="name">
+  Alias: <input type="text" name="alias">
+  Email: <input type="email" name="email">
+  Password: <input type="password" name="password">
+  Password Confirm: <input type="password" name="confirm_pw">
+  Date of Birth: <input type="date" name="birthday">
+  <input type="submit" value="Register">
+</form>
+
+{% endblock %}

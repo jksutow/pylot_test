@@ -1,34 +1,35 @@
-# Pylot MVC (beta)
-Pylot MVC is a lightweight MVC framework built in Python leveraging flask.
+## LOGIN/REGISTRATION
+  * validations errors appear on page X
 
-This framework is currently still in development. If you want to play around with it read on or clone the stable version!
+## SQL
+  * create sql schema X
+  * connect db X
 
-# Installation
+## VIEWS
+  * Login/reg page X
+  * Friends page that appears after Login X
+    * Table to show friends w/ view/remove features
+    * Table with users not on friend's list X
+      * add friend feature
+  * View friend profile IF friend
+  * View user profile IF NOt friend
 
-First make sure you have pip installed. If you don't have it installed there are great instructions here: https://pip.pypa.io/en/latest/installing.html
+## features
+  * HOME X
+  * LOGOUT X
+  * IF FRIEND - view profile or remove friend
+  * IF NOT FRIEND - Add friend or click name to view profile
 
-Next install virtualenv
-```
-sudo pip install virtualenv
-```
 
-Clone pylot
-```
-PARENT
-git clone -b stable https://github.com/Ketul-Patel/Pylot.git
-```
 
-cd into pylot (or rename and cd in) and source the setup file
-```
-cd Pylot
-. setup
-FOLLOW DIRECTIONS OUTLINED BY SETUP!
-note: there might be some fixes needed here, feel free to send them as FAQ's for this Readme (see below)
-```
 
-Now you can start your development server like so:
-```
-python manage.py runserver
-```
+  Features required:
 
-Enjoy! More details/features coming soon!
+  Login and Registration with validations. Validation errors should appear on the page.
+  View each user's profile
+  If the logged user does not have friends yet, the table/top part should say "You don't have friends yet."
+  Add/Remove Friend feature. When a user has been added as a friend. The logged user is also added on the newly added user's list of friends.
+  Updating of two tables if a user has been added as a friend or has been removed as a friend.
+  Logout
+  You must be able to deploy your work to Amazon EC2 and provide the IP address or subdomain/domain name to where your work has been deployed. Please note that Heroku deployment is not honored.
+  Submission Requirement: Your code, exported database file, a text file with the IP address or subdomain/domain name for the deployed work and short video demo link.
